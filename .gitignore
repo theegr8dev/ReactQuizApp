@@ -24,4 +24,4 @@ yarn-error.log*
 
 # 
 DateCounter.js*
-db-*
+.vscode

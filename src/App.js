@@ -20,7 +20,7 @@ const initialState = {
 	highscore: 0,
 	secondsRemaining: null,
 };
-const SECS_PER_QUESTION = 1;
+const SECS_PER_QUESTION = 30;
 function reducer(state, action) {
 	switch (action.type) {
 		case 'dataReceived':
@@ -103,7 +103,7 @@ export default function App() {
 		0
 	);
 	useEffect(() => {
-		fetch('http://localhost:8000/questions')
+		fetch('https://reactquizdata.onrender.com/questions')
 			.then(res => res.json())
 			.then(data => dispatch({ type: 'dataReceived', payload: data }))
 			.catch(() => dispatch({ type: 'dataFailed' }));
